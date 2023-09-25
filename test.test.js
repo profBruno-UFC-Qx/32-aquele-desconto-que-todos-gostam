@@ -15,7 +15,7 @@ test('Calculando o desconto em compras somente com itens eletronicos', () => {
     { nome: 'Smartphone', valor: 4000, categoria: "eletronicos" },
     { nome: 'SmartTV', valor: 5000, categoria: "eletronicos" }
   ]
-  expect(calcularDesconto(compras)).toBe(903);
+  expect(calcularDesconto(compras)).toBeCloseTo(903);
 });
 
 test('Calculando o desconto em compras somente com itens de vestuario', () => {
@@ -25,7 +25,7 @@ test('Calculando o desconto em compras somente com itens de vestuario', () => {
     { nome: 'Tênis casual', valor: 100, categoria: "vestuario" },
     { nome: 'Short Feminino', valor: 200, categoria: "vestuario" }
   ]
-  expect(calcularDesconto(compras)).toBe(132);
+  expect(calcularDesconto(compras)).toBeCloseTo(132);
 });
 
 test('Calculando o desconto em compras somente com itens de alimentos', () => {
@@ -35,7 +35,7 @@ test('Calculando o desconto em compras somente com itens de alimentos', () => {
     { nome: 'Bolacha de maizena', valor: 10, categoria: "alimentos" },
     { nome: 'Goma de tapioca', valor: 8, categoria: "alimentos" }
   ]
-  expect(calcularDesconto(compras)).toBe(18.3);
+  expect(calcularDesconto(compras)).toBeCloseTo(18.3);
 });
 
 
@@ -44,7 +44,7 @@ test('Calculando o desconto em compras somente com livros', () => {
     { nome: 'O guia do mochileiro das galaxias vol. I', valor: 40, categoria: "livros" },
     { nome: 'O misterio do passo das hortencias', valor: 12, categoria: "livros" }
   ]
-  expect(calcularDesconto(compras)).toBe(40*0.12 + 12*0.12);
+  expect(calcularDesconto(compras)).toBeCloseTo(40*0.12 + 12*0.12);
 });
 
 test('Aproveitando os descontos', () => {
@@ -63,5 +63,5 @@ test('Aproveitando os descontos', () => {
     { nome: 'Tênis casual', valor: 100, categoria: "vestuario" },
     { nome: 'Short Feminino', valor: 200, categoria: "vestuario" }
   ]
-  expect(calcularDesconto(compras)).toBe(1053.3 + 40*0.12 + 12*0.12);
+  expect(calcularDesconto(compras)).toBeCloseTo(1053.3 + 40*0.12 + 12*0.12);
 });
