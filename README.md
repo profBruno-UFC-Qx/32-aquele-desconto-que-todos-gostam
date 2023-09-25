@@ -1,8 +1,8 @@
 # Descrição
 
-Neste exercício, você vai criar uma função que recebe informações sobre um Pokémon e retorna um objeto que o representa.
+Neste exercício, considere que você foi contratado para criar um sistema que calcula o total de desconto com base na categoria de itens comprados.
 
-Objetivo desse exercício é praticar a criação de funções e objetos em JavaScript. 
+Objetivo desse exercício é praticar a manipulação de objetos em JavaScript. 
 
 **Todas as alterações devem ser feitas nos arquivos já existentes**
 
@@ -10,29 +10,30 @@ Objetivo desse exercício é praticar a criação de funções e objetos em Java
 
 ## Instruções:
 
-1. Crie uma função chamada `criarPokemon` que aceita quatro argumentos: 
-  - nome (string), tipo (string), nivel (number) e hp (number).
-2. Dentro da função, crie um objeto vazio chamado pokemon.
-3. Adicione as seguintes propriedades ao objeto pokemon com base nos argumentos recebidos:
-  - `nome`: Nome do Pokémon (string).
-  - `tipo`: Tipo do Pokémon (string).
-  - `nivel`: Nível do Pokémon (number).
-  - `hp`: Pontos de vida do Pokémon (number).
-4. Retorne o objeto pokemon preenchido.
-5. Fora da função, chame `criarPokemon()` passando valores fictícios como argumentos e armazene o objeto resultante.
-6. Exiba o objeto resultante no console.
+1. Crie uma função chamada `calcularDesconto` que aceita um vetor chamado `compra` como argumento onde cada item no vetor é representado por um objeto com as seguintes propriedades:
+   - nome: Nome do item (string).
+   - valor: Valor do item (number).
+   - categoria: Categoria do item (string).
+2. Considere os seguintes descontos por categoria:
+    - eletronicos  => 10% de desconto
+    - vestuario => 20% de desconto
+    - alimentos => 15% de desconto
+    - livros" => 12% de desconto
+3. Com base nesses valores, a função deve retornar o valor total dos descontos da compra.
+4. Teste a função chamando-a com diferentes vetores de itens comprados e exiba o total de desconto.
 
-
-Exemplo de criação da função e chamada:
+Exemplo de uso da função:
 
 ```javascript
-function criarPokemon(nome, tipo, nivel, hp) {
-  ...
-}
-
-const meuPokemon = criarPokemon("Pikachu", "Elétrico", 25, 80);
-console.log(meuPokemon);
+const compras = [
+  { nome: "Smartphone", valor: 1000, categoria: "eletronicos" },
+  { nome: "Camiseta", valor: 50, categoria: "vestuario" },
+  { nome: "Fones de Ouvido", valor: 150, categoria: "eletronicos" },
+  { nome: "Chocolate", valor: 5, categoria: "alimentos" },
+  { nome: "Livro", valor: 30, categoria: "livros" }
+];
+const totalDesconto = calcularDesconto(compras);
+console.log(`Total de desconto: R$${totalDesconto.toFixed(2)}`);
 ```
-Dica: 
 
-- Use os argumentos passados para a função para preencher as propriedades do Pokémon.
+Dica: Use o objeto `categoriasDesconto` para acessar a porcentagem de desconto com base na categoria de cada item.
